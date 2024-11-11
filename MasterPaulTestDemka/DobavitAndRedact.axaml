@@ -1,0 +1,79 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		MaxHeight="450" MaxWidth="800"
+		MinHeight="450" MinWidth="800"
+        x:Class="MasterPaulTestDemka.DobavitAndRedact"
+        x:CompileBindings="False"
+		WindowStartupLocation="CenterScreen"
+		Title="DobavitAndRedact">
+	<Grid ShowGridLines="False"
+		  Name="DobavitAndRedactGrid"
+		  RowDefinitions="*,8*,*"
+		  ColumnDefinitions="*,2*,*">
+
+		<ComboBox Grid.Column="1"
+				  Grid.Row="1"
+				  Width="300"
+				  Margin="50 95 0 0"
+				  SelectedIndex="0">
+			<ComboBox.ItemTemplate> 
+				<DataTemplate>
+					<ComboBoxItem Content="{Binding PartnersType}"/>
+				</DataTemplate>
+			</ComboBox.ItemTemplate>
+		</ComboBox>
+
+		<TextBox Grid.Column="1"
+				 Grid.Row="1"
+				 Height="30"
+				 Margin="0 0 0 70"
+				 Width="300"
+				 Watermark="Ввод телефона"
+				 Text="{Binding PartnerPhone}"/>
+		
+		<TextBox Grid.Column="1"
+				 Grid.Row="1"
+				 Height="30"
+				 Width="300"
+				 Watermark="Ввод названия"
+				 Text="{Binding PartnersName}"/>
+
+		<TextBox Grid.Column="1"
+				 Grid.Row="1"
+				 Margin="0 70 0 0"
+				 Height="30"
+				 Width="300"
+				 Watermark="Ввод ФИО директора"
+				 Text="{Binding Director}"/>
+
+		<TextBox Grid.Column="1"
+				 Grid.Row="1"
+				 Margin="0 140 0 0"
+				 Height="30"
+				 Width="300"
+				 Watermark="Ввод рейтинга"
+				 Text="{Binding Rating}"/>
+
+		<DockPanel Grid.Column="2"
+				   Grid.Row="2">
+			<Button Classes="Button_Save"
+					Width="95"
+					Click="ButtonSave">
+				<TextBlock Text="Сохранить"
+						   HorizontalAlignment="Center"
+						   Foreground="White"/>
+			</Button>
+			<TextBlock Text=" "/>
+			<Button Classes="Button_exit"
+					Width="95"
+					Click="ButtonExit">
+				<TextBlock Text="Отмена"
+						   HorizontalAlignment="Center"
+						   Foreground="White"/>
+			</Button>
+		</DockPanel>
+	</Grid>
+</Window>

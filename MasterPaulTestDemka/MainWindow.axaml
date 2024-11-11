@@ -1,0 +1,121 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="MasterPaulTestDemka.MainWindow"
+		x:CompileBindings="False"
+		WindowStartupLocation="CenterScreen"
+        Title="MasterPaulTestDemka">
+	<Grid ShowGridLines="False"
+		  RowDefinitions="*,8*,*"
+		  ColumnDefinitions="*,2*,*">
+
+		<DockPanel Grid.Column="0"
+				   Grid.Row="0"
+				   HorizontalAlignment="Left"
+				   Margin="20 0 0 0"		>
+			
+			<Image Source="C:\Users\prdb\Desktop\MasterPaulTestDemka\MasterPaulTestDemka\bin\Debug\net8.0\Asset\logo.png"
+				   Width="35"
+				   Height="35"/>
+			
+			<TextBlock Text="   "/>
+
+			<TextBlock Text="Партнеры"
+					   VerticalAlignment="Center"
+					   FontWeight="Bold"/>
+
+		</DockPanel>
+
+		<ListBox Name="List_Box_MasterPaulTestDemka"
+				 Grid.ColumnSpan="3"
+				 Grid.Row="1"
+				 DoubleTapped="ListBox_DoubleTapped"
+				 GotFocus="ListBox_GotFocus"
+				 BorderThickness="2"
+				 BorderBrush="Black"
+				 Background="#F4E8D3"
+				 Margin="20 10 20 10">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border BorderThickness="2"
+							BorderBrush="Black">
+						<Grid ShowGridLines="False"
+							  RowDefinitions="40,20,20,20,10"
+							  ColumnDefinitions="620,20">
+
+							<DockPanel Grid.Column="0"
+									   Grid.Row="0"
+									   VerticalAlignment="Center"
+									   Margin="30 0 0 0">
+								
+								<TextBlock Text="{Binding PartnersType}" 
+										   FontWeight="Bold"/>
+								
+								<TextBlock Text=" | "
+										   FontWeight="Bold"/>
+								
+								<TextBlock Text="{Binding PartnersName}"
+										   FontWeight="Bold"/>
+							</DockPanel>
+
+							<TextBlock Grid.Column="0"
+									   Grid.Row="1"
+									   FontWeight="Bold"
+									   VerticalAlignment="Center"
+									   Margin="30 0 0 0"
+									   Text="{Binding Director}"/>
+
+							<TextBlock Grid.Column="0"
+									   Grid.Row="2"
+									   FontWeight="Bold"
+									   VerticalAlignment="Center"
+									   Margin="30 0 0 0"
+									   Text="{Binding PartnerPhone}"/>
+
+							<TextBlock Grid.Column="0"
+									   Grid.Row="3"
+									   FontWeight="Bold"
+									   VerticalAlignment="Center"
+									   Margin="30 0 0 0"
+									   Text="{Binding Rating}"/>
+
+							<TextBlock Grid.Column="1"
+									   Grid.Row="2"
+									   FontWeight="Bold"
+									   VerticalAlignment="Center"
+									   Margin="30 0 0 0"
+									   Text="{Binding }"/>
+							
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+
+		<Button Grid.Column="2"
+				Grid.Row="2"
+				Click="Button_Click_Dobavit"
+				Margin="0 0 20 10"
+				HorizontalAlignment="Right"
+				Classes="Button_Save">
+			<TextBlock Text="Добавить"
+					   Foreground="White"/>
+		</Button>
+
+
+		<Button Grid.Column="0"
+				IsVisible="False"
+				Grid.Row="2"
+				Name="delet"
+				Click="Button_Click_Delete"
+				Margin="20 0 0 10"
+				HorizontalAlignment="Left"
+				Classes="Button_exit">
+			<TextBlock Text="Удалить"
+					   Foreground="White"/>
+		</Button>
+		
+	</Grid>
+</Window>

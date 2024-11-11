@@ -1,0 +1,33 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MasterPaulTestDemka.App"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+	
+    <Application.Styles>
+
+		<Style Selector="Button.Button_Save">
+			<Setter Property="Background" Value="#67BA80"/>
+			<Setter Property="BorderBrush" Value="Black"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Style Selector="^:pointerover /template/ContentPresenter">
+				<Setter Property="Background" Value="#67BA80"/>
+				<Setter Property="BorderBrush" Value="Black"/>
+				<Setter Property="BorderThickness" Value="2"/>
+			</Style>
+		</Style>
+
+		<Style Selector="Button.Button_exit">
+			<Setter Property="Background" Value="Red"/>
+			<Setter Property="BorderBrush" Value="Black"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Style Selector="^:pointerover /template/ContentPresenter">
+				<Setter Property="Background" Value="Red"/>
+				<Setter Property="BorderBrush" Value="Black"/>
+				<Setter Property="BorderThickness" Value="2"/>
+			</Style>
+		</Style>
+		
+        <FluentTheme />
+    </Application.Styles>
+</Application>
